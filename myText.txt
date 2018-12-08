@@ -1,0 +1,12 @@
+ Volume in drive E is Engineering
+ Volume Serial Number is 8A20-3A70
+
+ Directory of E:\iTi\Tooling\Playground\BatchScript
+
+12/08/2018  12:29 PM    <DIR>          .
+12/08/2018  12:29 PM    <DIR>          ..
+12/08/2018  12:54 PM                 0 myText.txt
+12/08/2018  12:54 PM               650 script.bat
+               2 File(s)            650 bytes
+               2 Dir(s)  72,478,797,824 bytes free
+This text is appended 
