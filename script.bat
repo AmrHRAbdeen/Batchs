@@ -26,5 +26,4 @@ rem "Operations in BATCH Script use /A "
 set num=9
 set /A "num=num+1"
 echo %num%
-
 pause
