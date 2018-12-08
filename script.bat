@@ -18,5 +18,13 @@ echo %PATH%
 rem "take user's input use /p option"
 echo Please,Enter Variable Value
 set /p x=
+rem "Another way to take user's input"
+set /p x=Please,Enter Variable Value
+rem "To display specific variables starting with a specific letter"
+set u
+rem "Operations in BATCH Script use /A "
+set num=9
+set /A "num=num+1"
+echo %num%
 
 pause
