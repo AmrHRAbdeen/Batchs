@@ -54,7 +54,9 @@
 			<h3>set command</h3>
 			<div>
 			<p>set : displays all env. variables</p>
-			<p>example: set USER will display all users</p>
+			<p>example: <code style="font-weight: bold;">>> set </code>:displays all env. Variables</p>
+			<p>set varName:displays varName value</p>
+			<p>Example: <code style="font-weight: bold;"> >> set USER </code>: displays all users</p>
 			</div>
 			<!-- END: Global env variables-->	
 
@@ -70,6 +72,61 @@
 			</div>
 			<!-- END: String Concatenation-->	
 
+			<!-- START: Batch Script -->
+			<h3>BatchScript.bat</h3>
+			<div>
+			<p>You can bundle all batch commands in one batch file and run it</p>
+			</div>
+			<!-- END: Batch Script-->		
+		
+			<!-- START: echo -->
+			<h3>echo</h3>
+			<div>
+			<p> echo used to display variables and commands</p>
+			<p><code style="font-weight: bold;"> >> echo </code> %varName%</p>	
+			</div>
+			<!-- END: echo-->	
+			
+			<!-- START: help -->
+			<h3>help</h3>
+			<div>
+			<p> help: (alone) used to display all commands with description , or a specific command</p>
+			<p><code style="font-weight: bold;"> >> help </code> CMD</p>
+			<p>You can also use: </p>
+			<p><code style="font-weight: bold;"> >> CMD </code> /? to display CMD description</p>	
+			</div>
+			<!-- END: help-->	
+
+			<!-- START: @ Symbol-->
+			<h3>@ Symbol</h3>
+			<div>
+			<p>@ Symbol: used to disable displaying commands in a batch file</p>
+			<p>Example: in a batch file : <code style="font-weight: bold;">@echo OFF</code><br> At the begining of the batch file will disable/suppress displaying all commands in CMD screen <br> while running the batch file</p>
+			</div>
+			<!-- END: @ Symbol-->	
+		
+			<!-- START: Escape Operator-->
+			<h3>% , ^ Escape Operators</h3>	
+			<div>
+			<p>1) % </p>	
+			<p><code style="font-weight: bold;">>> echo </code> Hey %%Escape Operator%% <br> 
+			this will display: Hey %Escape Operator%
+			</p>
+			<p>2) ^</p>
+			<p><code style="font-weight: bold;"> >> echo </code> ^&lt;data^&gt; <br>
+			this will be displayed as :&lt;data&gt;
+			</p>
+			</div>
+			<!-- End: Escape Operator-->
+		
+		
+			<!-- Tut: 14 -->
+		
+		
+		
+		
+		
+		
 		
 		</div>
 		<!-- END: Bootstrap main Div -->
