@@ -9,7 +9,7 @@ pipeline {
       stage('Welcome'){
          steps{
              echo 'Welcome ya 3amoora :D'
-             input('Do you want to continue?')
+             
          }
       }
       stage('Ahleen'){
