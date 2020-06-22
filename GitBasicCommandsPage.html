@@ -9,18 +9,67 @@
 </head>
 	<body>
 		<title>Batch Commands</title>
-		<h1>"Batch Commands for Windows OS"</h1>
+		<h1>"Batch Commands for Windows OS/cmd.exe interpreter"</h1>
 		<!-- START: Bootstrap main Div -->
 		<div id="accordion">
-			<!-- START: Where am I ? command-->
-			<h3>Where am I ?</h3>
+			<!-- START: dir command-->
+			<h3>dir command</h3>
 			<div>
-			<p> pwd: To figure out where you are</p>
+			<p> dir: list all visible folders and files in a directory</p>
+			<p> dir -force: list all visible or hidden folders and files in a directory</p>
 			</div>
-			<!-- END: Where am I ? command-->
-		
-		
-		
+			<!-- END: dir command-->
+
+			<!-- START: ver command-->
+			<h3>ver command</h3>
+			<div>
+			<p> ver: Displays current windows version</p>
+			</div>
+			<!-- END: ver command-->
+			
+			<!-- START: clear screen command-->
+			<h3>cls command</h3>
+			<div>
+			<p> cls: clear screen</p>
+			</div>
+			<!-- END: clear screen command-->
+
+			<!-- START: pause command-->
+			<h3>pause command</h3>
+			<div>
+			<p>pause : wait for user input</p>
+			</div>
+			<!-- END: pause command-->			
+
+			<!-- START: Data Types -->
+			<h3>Data Types | Variables</h3>
+			<div>
+			<p>To define a variable use <span style="font-weight: bold;">set</span></p>
+			<p>Example : set varName=10</p>
+			<p>To use variable use <span style="font-weight: bold;">%varName%</span></p>
+			</div>
+			<!-- END: Data Types-->			
+
+			<!-- START: Global env variables-->
+			<h3>set command</h3>
+			<div>
+			<p>set : displays all env. variables</p>
+			<p>example: set USER will display all users</p>
+			</div>
+			<!-- END: Global env variables-->	
+
+
+			<!-- START:String Concatenation-->
+			<h3>String Concatenation</h3>
+			<div>
+			<p>To concatenate two strings , place them beside each other in one variable</p>
+			<p>Example: set fullName=Amr</p>
+			<p>set fullName=%fullName% Abdeen</p>
+			<p style="font-weight: bold;">Note:</p>
+			<p>if we use <span style="font-weight: bold;">%fullName%</span> to display fullName it will only show the first name , rather we should use <span style="font-weight: bold;">echo</span> %fullName%</p>
+			</div>
+			<!-- END: String Concatenation-->	
+
 		
 		</div>
 		<!-- END: Bootstrap main Div -->
