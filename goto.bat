@@ -5,9 +5,11 @@ rem "%1 first argument:"
 rem  "%2 second argument:"
 rem  "%3 third argument..[upto %9 only]"
 rem "If you forget to insert one argument it will print an ERR! message"
+
 IF [%1]== [] GOTO BLANK
 IF [%2]== [] GOTO BLANK
 IF [%3]== [] GOTO BLANK
+
 rem "Optimization:You can check if %3 is found or not and that's enough!"		
 set folder_var=%1 
 set file_var=%2  

@@ -6,6 +6,23 @@
 	<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
 	<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+	
+	<!-- START: Adding Custome CSS -->
+	<style type="text/css">	
+	
+	/*** Adding Custom CSS to all code elements in the page ***/
+	code
+	{
+		font-weight: bold;
+		font-size: 1.2em;
+	}
+
+	/** Note: You can Add Tab to Tags using &emsp; code **/
+
+	</style>
+	<!-- END: Adding Custome CSS -->
+
+
 </head>
 	<body>
 		<title>Batch Commands</title>
@@ -54,9 +71,9 @@
 			<h3>set command</h3>
 			<div>
 			<p>set : displays all env. variables</p>
-			<p>example: <code style="font-weight: bold;">>> set </code>:displays all env. Variables</p>
+			<p>example: <code>>> set </code>:displays all env. Variables</p>
 			<p>set varName:displays varName value</p>
-			<p>Example: <code style="font-weight: bold;"> >> set USER </code>: displays all users</p>
+			<p>Example: <code> >> set USER </code>: displays all users</p>
 			</div>
 			<!-- END: Global env variables-->	
 
@@ -83,7 +100,7 @@
 			<h3>echo</h3>
 			<div>
 			<p> echo used to display variables and commands</p>
-			<p><code style="font-weight: bold;"> >> echo </code> %varName%</p>	
+			<p><code> >> echo </code> %varName%</p>	
 			</div>
 			<!-- END: echo-->	
 			
@@ -91,9 +108,9 @@
 			<h3>help</h3>
 			<div>
 			<p> help: (alone) used to display all commands with description , or a specific command</p>
-			<p><code style="font-weight: bold;"> >> help </code> CMD</p>
+			<p><code> >> help </code> CMD</p>
 			<p>You can also use: </p>
-			<p><code style="font-weight: bold;"> >> CMD </code> /? to display CMD description</p>	
+			<p><code> >> CMD </code> /? to display CMD description</p>	
 			</div>
 			<!-- END: help-->	
 
@@ -101,7 +118,7 @@
 			<h3>@ Symbol</h3>
 			<div>
 			<p>@ Symbol: used to disable displaying commands in a batch file</p>
-			<p>Example: in a batch file : <code style="font-weight: bold;">@echo OFF</code><br> At the begining of the batch file will disable/suppress displaying all commands in CMD screen <br> while running the batch file</p>
+			<p>Example: in a batch file : <code>@echo OFF</code><br> At the begining of the batch file will disable/suppress displaying all commands in CMD screen <br> while running the batch file</p>
 			</div>
 			<!-- END: @ Symbol-->	
 		
@@ -109,11 +126,11 @@
 			<h3>% , ^ Escape Operators</h3>	
 			<div>
 			<p>1) % </p>	
-			<p><code style="font-weight: bold;">>> echo </code> Hey %%Escape Operator%% <br> 
+			<p><code>>> echo </code> Hey %%Escape Operator%% <br> 
 			this will display: Hey %Escape Operator%
 			</p>
 			<p>2) ^</p>
-			<p><code style="font-weight: bold;"> >> echo </code> ^&lt;data^&gt; <br>
+			<p><code> >> echo </code> ^&lt;data^&gt; <br>
 			this will be displayed as :&lt;data&gt;
 			</p>
 			</div>
@@ -123,18 +140,18 @@
 			<!-- Start: 14:Mathematical Operators -->
 			<h3>Mathematical Operators</h3>
 			<div>
-				<p>to indicate Mathematical operation <code style="font-weight: bold;">set /a</code></p>
+				<p>to indicate Mathematical operation <code>set /a</code></p>
 				<p>Example</p>
 				<p>set /a sum = 1+1 </p>
-				<p>You can display all the Mathematical Operators using <code style="font-weight: bold;">help set </code> </p>
+				<p>You can display all the Mathematical Operators using <code>help set </code> </p>
 			</div>
 			<!-- END: 14:Mathematical Operators -->
 
 			<!-- Start: 15:Modulus Operator -->
 			<h3>Modulus Operator</h3>
 			<div>
-				<p> <code style="font-weight: bold;">set /a mod=10%3</code> this will work fine in CMD <br> 
-				But in script we should write it as <code style="font-weight: bold;">set /a mod=10 %% 3</code>
+				<p> <code>set /a mod=10%3</code> this will work fine in CMD <br> 
+				But in script we should write it as <code>set /a mod=10 %% 3</code>
 				</p>
 			</div>
 			<!-- END: 15:Modulus Operator -->
@@ -142,7 +159,7 @@
 			<!-- Start: 16:Input -->
 			<h3>Input</h3>
 			<div>
-				<p><code style="font-weight: bold;">set /p userInput=Input message</code><br>
+				<p><code>set /p userInput=Input message</code><br>
 				Input message can be ignored<br>What ever the user enters got stored in userInput variable
 				</p>
 			</div>
@@ -151,10 +168,92 @@
 			<!-- Start: 17:Lables -->
 			<h3>Labels</h3>
 			<div>
-				<p></p>
+				<p>Label is just giving a name to a group of CMDs</p>
+				<p>To write a label use <code>:labelName</code></p>
+				<p> Any CMD under that label will be considered a part of it</p>
+				<p>
+					:takeUserInput
+					set /p userInput=Enter your name
+				</p>
+				<p>Laberls works perfectly with Goto [ Explained in next section ]</p>
 			</div>
-			
 			<!-- End: 17:Lables -->
+
+			<!-- Start: 18:Goto -->
+			<h3>goto</h3>
+			<div>
+				<p>goto jumps(Go) to a specific label</p>
+				<p>Example:</p>
+					<code>@echo OFF</code>	<br>
+					<code>:Start</code>	<br>
+					<code>echo Start Batch Script ...</code>	<br>
+					<code>goto :displayOption</code>	<br>
+
+					<code>:takeUserInput</code>	<br>
+					<code>set /p userInput=Enter your name</code> 	<br>
+					<code>goto :End</code>	<br>
+					
+					<code>:displayOption</code>	<br>
+					<code>echo Option1: Full Build</code>	<br>
+					<code>echo Option2: Compile Only</code>	<br>
+					<code>echo Option3: Preprocessor Only</code>	<br>
+					<code>goto :takeUserInput</code>	<br>
+	
+					<code>:End</code>	<br>
+					<code>echo End of Batch Script</code>	<br>
+					<br> <note>Using Labels without goto will run the script sequentially (Top-Down)</note>	<br>
+			</div>
+			<!-- End: 18:Goto -->
+
+			<!-- Start: 19:Comments -->
+			<h3>Comments</h3>
+			<div>
+				<p>You can create a comment using <code>rem</code></p>
+				<p>Example</p>
+				<code>rem This is a comment in Batch Scripting</code>
+			</div>
+			<!-- End: 19:Comments -->
+
+
+			<!-- Start: 20:Basic Functions -->
+			<h3>Basic Functions</h3>
+			<div>
+				<p>Basic Batch Functions</p>
+				<p>Definig a Function in Batch is similar to Labels but ended with goto :eof</p>
+				<code>:main</code><br>
+				<code>goto :eof</code>
+				<p>:eof is a predefined label for End of File/Function used to exit a subroutine/Label</p>
+				<p>To call a Function use<code>call :Function</code></p>
+				<p>Example</p>
+				<code>@echo off</code><br>
+				<code>goto :main</code><br><br>
+				<code>:myFunction</code><br>	
+				&emsp;<code>echo Hello From my Function</code><br>
+				<code>    goto :eof</code><br></p>
+				<code>:main</code><br>
+				&emsp;<code>	echo Main Function has been called</code><br>
+				&emsp;<code>	call :myFunction</code><br>
+				&emsp;<code>	echo Main Called myFunction</code><br>
+				<code>goto :eof</code><br>
+			</div>
+			<!-- End: 20:Basic Functions -->
+
+			<!-- Start: 21:Function Arguments -->
+			<h3>Function Arguments</h3>
+			<div>
+				<p>You can pass a paramter to a Function using</p>
+				<code>call :myFunction Input1</code><br>
+				<p>The function is implemented as </p>
+				<code>:myFunction</code><br>
+				&emsp;<code>echo got %~1</code><br>
+				<code>goto :eof</code><br><br>
+				<p><code>%~1 =></code> represents The first input to the funtion</p><br>
+				<p><code>%~2 =></code> represents The Second input to the funtion and so on up to 9 input parameters</p>
+
+			</div>
+			<!-- End: 21:Function Arguments  -->
+		
+		
 		</div>
 		<!-- END: Bootstrap main Div -->
 
