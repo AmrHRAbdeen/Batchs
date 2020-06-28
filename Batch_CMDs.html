@@ -99,7 +99,7 @@
 			<!-- START: echo -->
 			<h3>echo</h3>
 			<div>
-			<p> echo used to display variables and commands</p>
+			<p> echo used to display variables , commands and messages</p>
 			<p><code> >> echo </code> %varName%</p>	
 			</div>
 			<!-- END: echo-->	
@@ -252,6 +252,87 @@
 
 			</div>
 			<!-- End: 21:Function Arguments  -->
+			
+			
+			<!-- Start:22:Function return -->
+			<h3>Function return</h3>
+			<div>
+				<p>Functions don't have return in Batch but we can mimic the behaviour of function return through variables</p>
+				<p>Inside a function you can modify any variable outside it</p>
+				<p>Example</p>
+				<code>@echo off</code><br>
+				<code>goto :main</code><br><br>
+				<code>:myFunction</code><br>	
+				&emsp;<code>echo Hello From my Function</code><br>
+				&emsp;<code>set %~1=Orange</code><br>
+				<code>    goto :eof</code><br></p>
+				<code>:main</code><br>
+				&emsp;<code>	echo Main Function has been called</code><br>
+				&emsp;<code>	set myVar=Apple</code><br>
+				&emsp;<code>	call :myFunction myVar</code><br>
+				&emsp;<code>	echo myVar after function call=%myVar%</code><br>
+				&emsp;<code>	echo Main Called myFunction</code><br>
+				<code>goto :eof</code><br>
+			</div>
+			<!-- End:22: Function return-->
+		
+			<!-- Start:23:Function Local Scope -->
+			<h3>Function Local Scope</h3>
+			<div>
+				<p>By default, Any function can access any variable but we can set a local scope to a specific function</p><br>
+				<p>Preventing any other function from accessing its local variables</p>
+				<p>By using <code>setlocal</code>at the begining of the function</p>
+				<p>and using<code>endlocal</code>at the end of the function which deletes all variables inside that function</p>
+				<p>Example</p>
+				<code>@echo off</code><br>
+				<code>goto :main</code><br><br>
+				<code>:myFunction</code><br>
+				<code>setlocal</code>	
+				&emsp;<code>echo Hello From my Function</code><br>
+				&emsp;<code>set localVar=myPrivateValue</code><br>
+				&emsp;<code> endlocal</code><br>
+				<code>    goto :eof</code><br></p>
+				<code>:main</code><br>
+				&emsp;<code>    setlocal</code><br>
+				&emsp;<code>	echo Main Function has been called</code><br>
+				&emsp;<code>	set myVar=Apple</code><br>
+				&emsp;<code>	call :myFunction </code><br>
+				&emsp;<code>	echo accessing localVar=%localVar%</code><br>
+				&emsp;<code> 	echo Value of localVar can not be accessed!</code><br>
+				&emsp;<code>	echo Main Called myFunction</code><br>
+				&emsp;<code>    endlocal</code><br>
+				<code>goto :eof</code><br>
+
+			</div>
+			<!-- End:23:Function Local Scope -->
+
+			<!-- Start:24 :Script Local Scope -->
+			<h3>Script Local Scope</h3>
+			<div>
+				<p>If you use <code>setlocal</code>in all functions inside your script</p><br>
+				<p>those variables can not be accessed outside that script</p>
+			</div>
+			<!-- End:24:Script Local Scope -->
+
+			<!-- Start:25:Return in local Functions -->
+			<h3>Return in local Functions</h3>
+			<div>
+			</div>
+			<!-- End:25:Return in local Functions -->
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		</div>
